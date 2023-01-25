@@ -20,6 +20,9 @@ export const Header = () => {
                                 </li>
                                 <li>
                                     <a href='/'>Ayuda</a>
+                                    <span class="material-symbols-outlined">
+                                        help
+                                    </span>
                                 </li>
                             </ul>
                         </nav>
