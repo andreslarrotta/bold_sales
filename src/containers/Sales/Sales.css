@@ -1,0 +1,9 @@
+.sales_container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sales_top {
+    display: flex;
+    align-items: center;
+}
