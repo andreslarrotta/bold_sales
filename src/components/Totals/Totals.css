@@ -1,0 +1,40 @@
+.totals {
+    background: white;
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.17);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.17);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.17);
+}
+
+.totals--title {
+    background: rgb(17, 30, 108);
+    background: linear-gradient(90deg, rgba(17, 30, 108, 1) 0%, rgba(239, 67, 78, 1) 100%);
+    padding: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    border-radius: 15px 15px 0 0;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.totals--result {
+    padding: 1rem;
+    text-align: center;
+}
+
+.totals--result h2 {
+    padding: 0;
+    margin: 0;
+    font-size: 2rem;
+    background: -webkit-linear-gradient(left, #171f6c, #e84250);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+.totals--result p {
+    font-size: 1rem;
+    color: #344484;
+}

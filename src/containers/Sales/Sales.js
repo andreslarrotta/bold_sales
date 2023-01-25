@@ -1,6 +1,7 @@
 import React from 'react'
 
 import './Sales.css'
+import { Totals } from '../../components/Totals'
 
 export const Sales = () => {
 
@@ -9,7 +10,7 @@ export const Sales = () => {
             <div className='sales_container'>
                 <div className='sales_top'>
                     <div className='sales_top--total'>
-                        Total de ventas
+                        <Totals />
                     </div>
                     <div className='sales_top--filters'>
                         Hoy Esta semanaa septiembre

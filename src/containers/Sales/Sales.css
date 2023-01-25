@@ -7,3 +7,11 @@
     display: flex;
     align-items: center;
 }
+
+.sales_top--total {
+    width: 30%;
+}
+
+.sales_top--filters {
+    width: 70%;
+}
