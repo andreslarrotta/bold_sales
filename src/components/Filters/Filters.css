@@ -48,3 +48,14 @@
 .filters--filter .material-symbols-outlined {
     margin: 0 0.5rem;
 }
+
+@media screen and (max-width: 800px) {
+    .filters--tabs li {
+        padding: 0.6rem;
+    }
+
+    .filters--filter-title {
+        width: 100%;
+        justify-content: center;
+    }
+}
