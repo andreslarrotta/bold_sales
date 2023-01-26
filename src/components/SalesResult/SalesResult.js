@@ -11,7 +11,7 @@ export const SalesResult = () => {
                 Tus ventas de septiembre
             </div>
             <div className='sales_result--table'>
-                <table cellspacing="0" cellpadding="0">
+                <table cellSpacing="0" cellPadding="0">
                     <tbody>
                         <tr className='sales_result--table-titles'>
                             <td>Transacción</td>
@@ -22,7 +22,7 @@ export const SalesResult = () => {
                         </tr>
                         <tr className='sales_result--table-content'>
                             <td className='sales_result--table-content_transaccion'>
-                                <span class="material-symbols-outlined">
+                                <span className="material-symbols-outlined">
                                     phone_iphone
                                 </span> Cobro exitoso
                             </td>
@@ -44,7 +44,7 @@ export const SalesResult = () => {
                         </tr>
                         <tr className='sales_result--table-content'>
                             <td className='sales_result--table-content_transaccion'>
-                                <span class="material-symbols-outlined">
+                                <span className="material-symbols-outlined">
                                     phone_iphone
                                 </span> Cobro no realizado
                             </td>
@@ -64,7 +64,7 @@ export const SalesResult = () => {
                         </tr>
                         <tr className='sales_result--table-content'>
                             <td className='sales_result--table-content_transaccion'>
-                                <span class="material-symbols-outlined">
+                                <span className="material-symbols-outlined">
                                     attach_file
                                 </span> Cobro exitoso
                             </td>
@@ -86,7 +86,7 @@ export const SalesResult = () => {
                         </tr>
                         <tr className='sales_result--table-content'>
                             <td className='sales_result--table-content_transaccion'>
-                                <span class="material-symbols-outlined">
+                                <span className="material-symbols-outlined">
                                     phone_iphone
                                 </span> Cobro exitoso
                             </td>

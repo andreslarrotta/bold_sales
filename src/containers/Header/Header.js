@@ -20,7 +20,7 @@ export const Header = () => {
                                 </li>
                                 <li>
                                     <a href='/'>Ayuda</a>
-                                    <span class="material-symbols-outlined">
+                                    <span className="material-symbols-outlined">
                                         help
                                     </span>
                                 </li>

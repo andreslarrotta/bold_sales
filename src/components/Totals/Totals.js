@@ -8,7 +8,7 @@ export const Totals = () => {
         <div className='totals'>
             <div className='totals--title'>
                 Total de ventas de septiembre
-                <span class="material-symbols-outlined">
+                <span className="material-symbols-outlined">
                     info
                 </span>
             </div>

@@ -3,6 +3,12 @@
     border-radius: 15px;
 }
 
+.filters--tabs-active {
+    color: #111e6c;
+    background: #e4e5ec;
+    font-weight: bold;
+}
+
 .filters--tabs ul {
     margin: 0;
     padding: 0.4rem;
