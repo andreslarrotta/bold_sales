@@ -10,9 +10,7 @@ export const SalesProviders = (props) => {
 
   const [view, setView] = useState("");
   const [dataFilter, setDataFilter] = useState([]);
-
-  console.log("soy la data", data);
-  console.log("soy la dataFilter", dataFilter);
+  const [week, setWeek] = useState(0);
 
   const getDataLocalStorage = () => {
     return JSON.parse(localStorage.getItem("bold"));
@@ -71,6 +69,7 @@ export const SalesProviders = (props) => {
     }
 
     if (view === "Week") {
+      setWeek(getWeekDate(dateToday));
       const filterData = data.data.filter(
         (sale) => getWeekDate(sale.date) === getWeekDate(dateToday)
       );
@@ -89,10 +88,12 @@ export const SalesProviders = (props) => {
     return {
       data,
       view,
+      week,
+      dateToday,
       dataFilter,
       setStateView,
     };
-  }, [data, view, dataFilter, setStateView]);
+  }, [data, view, week, dataFilter, setStateView]);
 
   return <SalesContext.Provider value={value} {...props} />;
 };
