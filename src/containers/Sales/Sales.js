@@ -2,6 +2,7 @@ import React from 'react'
 
 import './Sales.css'
 import { Totals } from '../../components/Totals'
+import { Filters } from '../../components/Filters'
 
 export const Sales = () => {
 
@@ -13,8 +14,7 @@ export const Sales = () => {
                         <Totals />
                     </div>
                     <div className='sales_top--filters'>
-                        Hoy Esta semanaa septiembre
-                        y el filtro
+                        <Filters />
                     </div>
                 </div>
                 <div className='sales_result'>

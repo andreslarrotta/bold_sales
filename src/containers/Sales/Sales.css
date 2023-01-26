@@ -5,13 +5,15 @@
 
 .sales_top {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .sales_top--total {
     width: 30%;
+    margin: 1rem;
 }
 
 .sales_top--filters {
     width: 70%;
+    margin: 1rem;
 }
