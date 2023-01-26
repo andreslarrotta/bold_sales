@@ -4,7 +4,7 @@
             "type": "datafono",
             "transaction": "Cobro exito",
             "icon": "phone_iphone",
-            "date": "04/09/2020 - 17:14:24",
+            "date": "2020-09-04 17:14:24",
             "paymentMethod": {
                 "franchise": "MasterCard",
                 "number": "*** *** *** 7711"
@@ -20,7 +20,7 @@
             "type": "link",
             "transaction": "Cobro no realizado",
             "icon": "phone_iphone",
-            "date": "04/09/2020 - 17:14:24",
+            "date": "2020-09-04 17:14:24",
             "paymentMethod": {
                 "franchise": "MasterCard",
                 "number": "*** *** *** 7711"
@@ -36,7 +36,23 @@
             "type": "link",
             "transaction": "Cobro exito",
             "icon": "attach_file",
-            "date": "10/09/2020 - 17:14:24",
+            "date": "2020-09-13 17:14:24",
+            "paymentMethod": {
+                "franchise": "Visa",
+                "number": "*** *** *** 7711"
+            },
+            "id": "GZEN23784UBV2",
+            "amount": {
+                "total": 25000,
+                "title": "",
+                "discounts": 0
+            }
+        },
+        {
+            "type": "link",
+            "transaction": "Cobro exito",
+            "icon": "attach_file",
+            "date": "2020-9-01 17:14:24",
             "paymentMethod": {
                 "franchise": "Visa",
                 "number": "*** *** *** 7711"
