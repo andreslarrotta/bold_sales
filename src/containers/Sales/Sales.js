@@ -3,6 +3,7 @@ import React from 'react'
 import './Sales.css'
 import { Totals } from '../../components/Totals'
 import { Filters } from '../../components/Filters'
+import { SalesResult } from '../../components/SalesResult/SalesResult'
 
 export const Sales = () => {
 
@@ -17,8 +18,8 @@ export const Sales = () => {
                         <Filters />
                     </div>
                 </div>
-                <div className='sales_result'>
-                    tus ventas de septiempre
+                <div className='sales_content'>
+                    <SalesResult />
                 </div>
             </div>
         </div>

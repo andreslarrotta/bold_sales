@@ -1,0 +1,1 @@
+export { SalesResult } from './SalesResult'

@@ -1,0 +1,103 @@
+.sales_result {
+    background: white;
+    border-radius: 15px;
+}
+
+.sales_result--title {
+    background: rgb(17, 30, 108);
+    background: linear-gradient(90deg, rgba(17, 30, 108, 1) 0%, rgba(239, 67, 78, 1) 100%);
+    padding: 0.8rem 1.5rem;
+    color: white;
+    border-radius: 15px 15px 0 0;
+    font-weight: 500;
+    font-size: 1.3rem;
+    text-align: left;
+}
+
+.sales_result--table table {
+    width: 100%;
+}
+
+.sales_result--table table .sales_result--table-content:nth-child(2n + 1) td:first-child {
+    border-left: 5px solid #c1c1c1;
+}
+
+.sales_result--table table .sales_result--table-content:nth-child(2n) td:first-child {
+    border-left: 5px solid #0c236d;
+}
+
+.sales_result--table {
+    max-height: 400px;
+    overflow: scroll;
+}
+
+.sales_result--table-titles {
+    text-align: left;
+}
+
+.sales_result--table-titles td {
+    height: 50px;
+    color: #323232;
+    border-bottom: 2px solid #e4e4e4;
+    font-weight: 500;
+    padding-left: 1.5rem;
+}
+
+.sales_result--table-content {
+    text-align: left;
+}
+
+.sales_result--table-content td {
+    height: 50px;
+    border-bottom: 2px solid #e4e4e4;
+    font-weight: 500;
+    padding-left: 1.5rem;
+}
+
+.sales_result--table-content_transaccion {
+    color: #0c236d;
+}
+
+.sales_result--table-content_date {
+    color: #969696;
+}
+
+.sales_result--table-content_payment {
+    color: #969696;
+}
+
+.sales_result--table-content_payment img {
+    height: 20px;
+    margin: 0 0.2rem;
+}
+
+.sales_result--table-content_id {
+    color: #969696;
+}
+
+.sales_result--table-content_amount span {
+    display: block;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.sales_result--table-content_amount--total {
+    color: #0c236d;
+    font-size: 1rem;
+}
+
+.sales_result--table-content_amount--text {
+    color: #969696;
+    font-size: 1rem;
+}
+
+.sales_result--table-content_amount--discount {
+    color: red;
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+    .sales_result--table table {
+        width: 200%;
+    }
+}

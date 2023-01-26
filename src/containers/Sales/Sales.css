@@ -18,6 +18,10 @@
     margin: 1rem;
 }
 
+.sales_content {
+    margin: 1rem;
+}
+
 @media screen and (max-width: 800px) {
     .sales_top {
         display: block;
