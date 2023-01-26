@@ -6,7 +6,7 @@ const SalesContext = React.createContext();
 
 export const SalesProviders = (props) => {
   const data = Data;
-  const dateToday = "2020-09-13 17:14:24";
+  const dateToday = "2020/09/13 17:14:24";
 
   const [view, setView] = useState("");
   const [dataFilter, setDataFilter] = useState([]);
@@ -20,20 +20,22 @@ export const SalesProviders = (props) => {
     localStorage.setItem("bold", JSON.stringify(data));
   };
 
-  const getMothDate = (date) => {
+  const getMothDate = (dateMonth) => {
     const options = { month: "long" };
-    return new Intl.DateTimeFormat("es-CO", options).format(new Date(date));
+    return new Intl.DateTimeFormat("es-CO", options).format(
+      new Date(dateMonth.replace(/-/g, "/"))
+    );
   };
 
   const getWeekDate = (dateString) => {
-    const d = new Date(dateString);
+    const d = new Date(dateString.replace(/-/g, "/"));
     const date = d.getDate();
     const day = d.getDay();
     return Math.ceil((date - 1 - day) / 7);
   };
 
-  const convertDate = (date) => {
-    const newDate = new Date(date);
+  const convertDate = (dateConvert) => {
+    const newDate = new Date(dateConvert.replace(/-/g, "/"));
     const dateDay = newDate.getDate();
     return dateDay;
   };
@@ -62,23 +64,23 @@ export const SalesProviders = (props) => {
 
   useEffect(() => {
     if (view === "Septiembre") {
-      const filterData = data.data.filter(
-        (sale) => getMothDate(sale.date) === "septiembre"
+      const filterData = data?.data?.filter(
+        (sale) => getMothDate(sale?.date) === "septiembre"
       );
       setDataFilter(filterData);
     }
 
     if (view === "Week") {
       setWeek(getWeekDate(dateToday));
-      const filterData = data.data.filter(
-        (sale) => getWeekDate(sale.date) === getWeekDate(dateToday)
+      const filterData = data?.data?.filter(
+        (sale) => getWeekDate(sale?.date) === getWeekDate(dateToday)
       );
       setDataFilter(filterData);
     }
 
     if (view === "Today") {
-      const filterData = data.data.filter(
-        (sale) => convertDate(sale.date) === convertDate(dateToday)
+      const filterData = data?.data?.filter(
+        (sale) => convertDate(sale?.date) === convertDate(dateToday)
       );
       setDataFilter(filterData);
     }

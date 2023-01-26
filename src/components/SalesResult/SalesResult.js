@@ -9,6 +9,7 @@ export const SalesResult = () => {
     const { dataFilter, view, week } = useSales()
 
     console.log('data para la table', dataFilter)
+
     const handlePrice = (amount) => {
         const formatter = new Intl.NumberFormat('es-CO', {
             style: 'currency',

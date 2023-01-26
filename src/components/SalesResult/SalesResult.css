@@ -68,8 +68,8 @@
 }
 
 .sales_result--table-content_payment img {
-    height: 20px;
-    margin: 0 0.2rem;
+    width: 35px;
+    margin: 0 0.5rem;
 }
 
 .sales_result--table-content_id {
