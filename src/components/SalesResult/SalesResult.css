@@ -97,6 +97,10 @@
 }
 
 @media screen and (max-width: 800px) {
+    .sales_result--title {
+        text-align: center;
+    }
+
     .sales_result--table table {
         width: 200%;
     }
