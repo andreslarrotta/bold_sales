@@ -1,62 +1,26 @@
-# Getting Started with Create React App
+# Bold pruebas
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto fue creado con React
+Luego de clonar este proyecto, seguir los siguientes pasos.
 
-## Available Scripts
+## Pasos para empezar el proyecto
 
-In the project directory, you can run:
+en la consola escribe:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+El proyecto se abrirá en el localhost [http://localhost:3000](http://localhost:3000) para poder ver el proyecto en el navegador.
 
-### `npm run build`
+## Configuraciones para tener en cuenta para este proyecto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. Iconos
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Para el manejo de los iconos se utilizaron los iconos de Material Design Google, para poder optimizar la iconografía.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2. CSS puro
 
-### `npm run eject`
+El desarrollo del proyecto cuenta con una programación de Container y Componente, el cual nos permite organizar el proyecto de una mejor manera, y al tener cada componente por separado se puede organizar el CSS más rápido y adicional el proyecto mitificará el código y será más optimo al lanzar a producción.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 2. Fecha fija
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Para poder visualizar el proyecto se deja fija una fecha que es el 23 de Septiembre del 2020, que al usarla para poder filtrar la información del Json se pueda actualizar la tabla y actualizar la información.
