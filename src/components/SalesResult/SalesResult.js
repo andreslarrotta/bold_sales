@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import './SalesResult.css'
 import paymentIconMaster from '../../assets/mastercard_icon.png'
@@ -6,9 +6,11 @@ import paymentIconVisa from '../../assets/visa_icon.png'
 import { useSales } from '../../context/sales-context'
 
 export const SalesResult = () => {
-    const { dataFilter, view, week } = useSales()
+    const { dataFilter, view, week, filterTable } = useSales()
+    const [data, setData] = useState(dataFilter)
 
     console.log('data para la table', dataFilter)
+    console.log('para aplicar filtro', filterTable)
 
     const handlePrice = (amount) => {
         const formatter = new Intl.NumberFormat('es-CO', {
@@ -17,6 +19,27 @@ export const SalesResult = () => {
         });
         return formatter.format(amount)
     }
+
+    useEffect(() => {
+        const dataOriginal = dataFilter
+
+        if (filterTable === "" || filterTable === "all") {
+            setData(dataOriginal)
+        }
+
+        if (filterTable === "datafono") {
+            const newData = dataFilter.filter((sale) => sale?.type === "datafono");
+            setData(newData)
+            console.log("filtro de datafono");
+        }
+
+        if (filterTable === "link") {
+            const newData = dataFilter.filter((sale) => sale?.type === "link");
+            setData(newData)
+            console.log("filtro de datafono");
+        }
+
+    }, [dataFilter, filterTable]);
 
     return (
         <div className='sales_result'>
@@ -45,7 +68,7 @@ export const SalesResult = () => {
                             <td>Monto</td>
                         </tr>
                         {
-                            dataFilter.map((sale, index) => {
+                            data.map((sale, index) => {
                                 return <tr className='sales_result--table-content' key={`${sale.id}-${index}`}>
                                     <td className='sales_result--table-content_transaccion'>
                                         <span className="material-symbols-outlined">

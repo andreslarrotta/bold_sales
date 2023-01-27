@@ -4,9 +4,28 @@ import { gsap } from "gsap";
 import './Filters.css'
 import { useSales } from '../../context/sales-context'
 export const Filters = () => {
-    const { view, setStateView } = useSales()
+    const { view, setStateView, setFilterResult } = useSales()
     const [open, setOpen] = useState(false)
+    const [filter, setFilter] = useState('')
 
+    const animationClose = () => {
+        gsap.to(`.filters--filter-content`, {
+            opacity: 0,
+            height: 0,
+            padding: 0,
+            duration: 0.5,
+            onComplete: () => {
+                gsap.to(`.icon_filter`, {
+                    opacity: 1,
+                    x: 0,
+                    duration: 0.5,
+                    onComplete: () => {
+                        setOpen(false)
+                    }
+                });
+            }
+        });
+    }
     const handleView = (newView) => {
         setStateView(newView)
     }
@@ -31,22 +50,16 @@ export const Filters = () => {
     }
 
     const handleCloseFilter = () => {
-        gsap.to(`.filters--filter-content`, {
-            opacity: 0,
-            height: 0,
-            padding: 0,
-            duration: 0.5,
-            onComplete: () => {
-                gsap.to(`.icon_filter`, {
-                    opacity: 1,
-                    x: 0,
-                    duration: 0.5,
-                    onComplete: () => {
-                        setOpen(false)
-                    }
-                });
-            }
-        });
+        animationClose()
+    }
+
+    const handleFilter = (value) => {
+        setFilter(value)
+    }
+
+    const handleAddFilter = () => {
+        animationClose()
+        setFilterResult(filter)
     }
 
     return (
@@ -92,24 +105,45 @@ export const Filters = () => {
                         <ul>
                             <li>
                                 <div>
-                                    <input type="radio" id="datafono" name="filter" value="datafono" />
+                                    <input
+                                        type="radio"
+                                        id="datafono"
+                                        name="filter"
+                                        value="datafono"
+                                        onChange={(e) => handleFilter(e.target.value)}
+                                    />
                                     <label htmlFor="datafono">Cobro con datáfono</label>
                                 </div>
                             </li>
                             <li>
                                 <div>
-                                    <input type="radio" id="link" name="filter" value="link" />
+                                    <input
+                                        type="radio"
+                                        id="link"
+                                        name="filter"
+                                        value="link"
+                                        onChange={(e) => handleFilter(e.target.value)}
+                                    />
                                     <label htmlFor="link">Cobros con link de pago</label>
                                 </div>
                             </li>
                             <li>
                                 <div>
-                                    <input type="radio" id="all" name="filter" value="all" />
+                                    <input
+                                        type="radio"
+                                        id="all"
+                                        name="filter"
+                                        value="all"
+                                        onChange={(e) => handleFilter(e.target.value)}
+                                    />
                                     <label htmlFor="all">Ver todos</label>
                                 </div>
                             </li>
                         </ul>
-                        <button>Aplicar</button>
+                        <button
+                            className={filter === '' ? 'button-disabled' : ''}
+                            onClick={handleAddFilter}
+                        >Aplicar</button>
                     </div>
                 </div>
             </div>

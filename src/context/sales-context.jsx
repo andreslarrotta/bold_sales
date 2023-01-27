@@ -11,6 +11,7 @@ export const SalesProviders = (props) => {
   const [view, setView] = useState("");
   const [dataFilter, setDataFilter] = useState([]);
   const [week, setWeek] = useState(0);
+  const [filterTable, setFilterTable] = useState("");
 
   const getDataLocalStorage = () => {
     return JSON.parse(localStorage.getItem("bold"));
@@ -38,6 +39,11 @@ export const SalesProviders = (props) => {
     const newDate = new Date(dateConvert.replace(/-/g, "/"));
     const dateDay = newDate.getDate();
     return dateDay;
+  };
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const setFilterResult = (filter) => {
+    setFilterTable(filter);
   };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -93,9 +99,19 @@ export const SalesProviders = (props) => {
       week,
       dateToday,
       dataFilter,
+      filterTable,
       setStateView,
+      setFilterResult,
     };
-  }, [data, view, week, dataFilter, setStateView]);
+  }, [
+    data,
+    view,
+    week,
+    dataFilter,
+    filterTable,
+    setStateView,
+    setFilterResult,
+  ]);
 
   return <SalesContext.Provider value={value} {...props} />;
 };
