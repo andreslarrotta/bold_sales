@@ -9,9 +9,6 @@ export const SalesResult = () => {
     const { dataFilter, view, week, filterTable } = useSales()
     const [data, setData] = useState(dataFilter)
 
-    console.log('data para la table', dataFilter)
-    console.log('para aplicar filtro', filterTable)
-
     const handlePrice = (amount) => {
         const formatter = new Intl.NumberFormat('es-CO', {
             style: 'currency',
@@ -22,6 +19,25 @@ export const SalesResult = () => {
 
     useEffect(() => {
         const dataOriginal = dataFilter
+        let dataEmply = []
+
+        for (const element of filterTable) {
+
+            if (element === "link") {
+                const dataLink = dataFilter.filter((sale) => sale?.type === "link");
+                dataEmply = dataEmply.concat(dataLink)
+            }
+
+            if (element === "datafono") {
+                const dataLDatafono = dataFilter.filter((sale) => sale?.type === "datafono");
+                dataEmply = dataEmply.concat(dataLDatafono)
+            }
+            setData(dataEmply)
+
+            if (element === "all") {
+                setData(dataOriginal)
+            }
+        }
 
         if (filterTable === "" || filterTable === "all") {
             setData(dataOriginal)
@@ -30,13 +46,11 @@ export const SalesResult = () => {
         if (filterTable === "datafono") {
             const newData = dataFilter.filter((sale) => sale?.type === "datafono");
             setData(newData)
-            console.log("filtro de datafono");
         }
 
         if (filterTable === "link") {
             const newData = dataFilter.filter((sale) => sale?.type === "link");
             setData(newData)
-            console.log("filtro de datafono");
         }
 
     }, [dataFilter, filterTable]);

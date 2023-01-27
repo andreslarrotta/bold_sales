@@ -7,18 +7,19 @@ export const Filters = () => {
     const { view, setStateView, setFilterResult } = useSales()
     const [open, setOpen] = useState(false)
     const [filter, setFilter] = useState('')
+    const [filterArray, setFilterArray] = useState([])
 
     const animationClose = () => {
         gsap.to(`.filters--filter-content`, {
             opacity: 0,
             height: 0,
             padding: 0,
-            duration: 0.5,
+            duration: 0.2,
             onComplete: () => {
                 gsap.to(`.icon_filter`, {
                     opacity: 1,
                     x: 0,
-                    duration: 0.5,
+                    duration: 0.2,
                     onComplete: () => {
                         setOpen(false)
                     }
@@ -34,13 +35,13 @@ export const Filters = () => {
         gsap.to(`.icon_filter`, {
             opacity: 0,
             x: 10,
-            duration: 0.5,
+            duration: 0.2,
             onComplete: () => {
                 gsap.to(`.filters--filter-content`, {
                     opacity: 1,
                     height: 200,
                     padding: '1rem',
-                    duration: 0.5,
+                    duration: 0.2,
                     onComplete: () => {
                         setOpen(true)
                     }
@@ -54,12 +55,22 @@ export const Filters = () => {
     }
 
     const handleFilter = (value) => {
+        const found = filterArray.find(filterItem => filterItem === value)
+
+        if (found) {
+            const filter = filterArray.filter(item => item !== value)
+            setFilterArray(filter)
+        } else {
+            filterArray.push(value)
+        }
+
+
         setFilter(value)
     }
 
     const handleAddFilter = () => {
         animationClose()
-        setFilterResult(filter)
+        setFilterResult(filterArray)
     }
 
     return (
@@ -106,7 +117,7 @@ export const Filters = () => {
                             <li>
                                 <div>
                                     <input
-                                        type="radio"
+                                        type="checkbox"
                                         id="datafono"
                                         name="filter"
                                         value="datafono"
@@ -118,7 +129,7 @@ export const Filters = () => {
                             <li>
                                 <div>
                                     <input
-                                        type="radio"
+                                        type="checkbox"
                                         id="link"
                                         name="filter"
                                         value="link"
@@ -130,7 +141,7 @@ export const Filters = () => {
                             <li>
                                 <div>
                                     <input
-                                        type="radio"
+                                        type="checkbox"
                                         id="all"
                                         name="filter"
                                         value="all"
